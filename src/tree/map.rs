@@ -378,7 +378,7 @@ impl<K, V, C> TreeMap<K, V, C> where C: Compare<K> {
     /// ```
     #[unstable = "matches collection reform specification, waiting for dust to settle"]
     pub fn into_iter(self) -> IntoIter<K, V> {
-        let TreeMap { root, length } = self;
+        let TreeMap { root, length, .. } = self;
         let stk = match root {
             None => vec!(),
             Some(box tn) => vec!(tn)
