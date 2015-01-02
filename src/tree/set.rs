@@ -160,7 +160,7 @@ impl<T, C> TreeSet<T, C> where C: Compare<T> {
     #[inline]
     #[unstable = "matches collection reform specification, waiting for dust to settle"]
     pub fn iter<'a>(&'a self) -> Iter<'a, T> {
-        Iter{iter: self.map.iter()}
+        Iter { iter: self.map.iter() }
     }
 
     /// Gets a lazy iterator over the values in the set, in descending order.
@@ -178,7 +178,7 @@ impl<T, C> TreeSet<T, C> where C: Compare<T> {
     /// ```
     #[inline]
     pub fn rev_iter<'a>(&'a self) -> RevIter<'a, T> {
-        RevIter{iter: self.map.rev_iter()}
+        RevIter { iter: self.map.rev_iter() }
     }
 
     /// Creates a consuming iterator, that is, one that moves each value out of the
@@ -218,7 +218,7 @@ impl<T, C> TreeSet<T, C> where C: Compare<T> {
     /// ```
     #[inline]
     pub fn lower_bound<'a>(&'a self, v: &T) -> Iter<'a, T> {
-        Iter{iter: self.map.lower_bound(v)}
+        Iter { iter: self.map.lower_bound(v) }
     }
 
     /// Gets a lazy iterator pointing to the first value greater than `v`.
@@ -237,7 +237,7 @@ impl<T, C> TreeSet<T, C> where C: Compare<T> {
     /// ```
     #[inline]
     pub fn upper_bound<'a>(&'a self, v: &T) -> Iter<'a, T> {
-        Iter{iter: self.map.upper_bound(v)}
+        Iter { iter: self.map.upper_bound(v) }
     }
 
     /// Visits the values representing the difference, in ascending order.

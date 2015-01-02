@@ -132,7 +132,7 @@ impl TrieSet {
     #[inline]
     #[unstable = "matches collection reform specification, waiting for dust to settle"]
     pub fn iter<'a>(&'a self) -> Iter<'a> {
-        Iter{iter: self.map.iter()}
+        Iter { iter: self.map.iter() }
     }
 
     /// Gets an iterator pointing to the first value that is not less than `val`.
@@ -149,7 +149,7 @@ impl TrieSet {
     /// assert_eq!(set.lower_bound(10).next(), None);
     /// ```
     pub fn lower_bound<'a>(&'a self, val: uint) -> Iter<'a> {
-        Iter{iter: self.map.lower_bound(val)}
+        Iter { iter: self.map.lower_bound(val) }
     }
 
     /// Gets an iterator pointing to the first value that key is greater than `val`.
@@ -166,7 +166,7 @@ impl TrieSet {
     /// assert_eq!(set.upper_bound(10).next(), None);
     /// ```
     pub fn upper_bound<'a>(&'a self, val: uint) -> Iter<'a> {
-        Iter{iter: self.map.upper_bound(val)}
+        Iter { iter: self.map.upper_bound(val) }
     }
 
     /// Visits the values representing the difference, in ascending order.
@@ -194,7 +194,7 @@ impl TrieSet {
     /// ```
     #[unstable = "matches collection reform specification, waiting for dust to settle"]
     pub fn difference<'a>(&'a self, other: &'a TrieSet) -> Difference<'a> {
-        Difference{a: self.iter().peekable(), b: other.iter().peekable()}
+        Difference { a: self.iter().peekable(), b: other.iter().peekable() }
     }
 
     /// Visits the values representing the symmetric difference, in ascending order.
@@ -220,7 +220,7 @@ impl TrieSet {
     /// ```
     #[unstable = "matches collection reform specification, waiting for dust to settle."]
     pub fn symmetric_difference<'a>(&'a self, other: &'a TrieSet) -> SymmetricDifference<'a> {
-        SymmetricDifference{a: self.iter().peekable(), b: other.iter().peekable()}
+        SymmetricDifference { a: self.iter().peekable(), b: other.iter().peekable() }
     }
 
     /// Visits the values representing the intersection, in ascending order.
@@ -243,7 +243,7 @@ impl TrieSet {
     /// ```
     #[unstable = "matches collection reform specification, waiting for dust to settle"]
     pub fn intersection<'a>(&'a self, other: &'a TrieSet) -> Intersection<'a> {
-        Intersection{a: self.iter().peekable(), b: other.iter().peekable()}
+        Intersection { a: self.iter().peekable(), b: other.iter().peekable() }
     }
 
     /// Visits the values representing the union, in ascending order.
@@ -266,7 +266,7 @@ impl TrieSet {
     /// ```
     #[unstable = "matches collection reform specification, waiting for dust to settle"]
     pub fn union<'a>(&'a self, other: &'a TrieSet) -> Union<'a> {
-        Union{a: self.iter().peekable(), b: other.iter().peekable()}
+        Union { a: self.iter().peekable(), b: other.iter().peekable() }
     }
 
     /// Return the number of elements in the set
